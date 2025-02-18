@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-md p-6 bg-white rounded-3xl shadow-lg">
+  <div class="w-full max-w-md p-6 bg-white/40 backdrop-blur-xl py-4 rounded-3xl shadow-lg">
     <!-- поиск -->
     <form @submit.prevent="fetchWeather" class="flex gap-4">
       <input
@@ -13,13 +13,13 @@
 
     <!-- карточка-->
     <div v-if="weather" class="mt-6 text-center">
-      <h2 class="text-2xl font-bold text-gray-800">{{ weather.location.name }}, {{ weather.location.country }}</h2>
+      <h2 class="text-2xl font-bold text-white">{{ weather.location.name }}, {{ weather.location.country }}</h2>
       <div class="flex justify-center items-center mt-4">
         <img :src="weather.current.condition.icon" :alt="weather.current.condition.text" class="w-20 h-20" />
       </div>
-      <p class="text-4xl font-bold text-gray-900 mt-2">{{ weather.current.temp_c }}°C</p>
-      <p class="text-gray-600 text-lg">{{ weather.current.condition.text }}</p>
-      <div class="flex justify-between mt-4 text-gray-700">
+      <p class="text-4xl font-bold text-white mt-2">{{ weather.current.temp_c }}°C</p>
+      <p class="text-white text-lg">{{ weather.current.condition.text }}</p>
+      <div class="flex justify-between mt-4 text-white">
         <p>💧 Humidity: <b>{{ weather.current.humidity }}%</b></p>
         <p>💨 Wind: <b>{{ weather.current.wind_kph }} km/h</b></p>
       </div>
