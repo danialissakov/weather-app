@@ -1,6 +1,6 @@
 <template>
   <div class="w-full max-w-md p-6 bg-white rounded-3xl shadow-lg">
-    <!-- Форма поиска -->
+    <!-- поиск -->
     <form @submit.prevent="fetchWeather" class="flex gap-4">
       <input
         v-model="city"
@@ -11,7 +11,7 @@
       <button class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">Search</button>
     </form>
 
-    <!-- Карточка с погодой -->
+    <!-- карточка-->
     <div v-if="weather" class="mt-6 text-center">
       <h2 class="text-2xl font-bold text-gray-800">{{ weather.location.name }}, {{ weather.location.country }}</h2>
       <div class="flex justify-center items-center mt-4">
