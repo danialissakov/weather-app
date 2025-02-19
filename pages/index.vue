@@ -6,7 +6,7 @@
         v-model="city"
         type="text"
         placeholder="Enter city"
-        class="w-full border p-2 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        class="w-full border p-2 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <button class="bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">Search</button>
     </form>
