@@ -12,16 +12,34 @@
     </form>
 
     <!-- карточка-->
-    <div v-if="weather" class="mt-6 text-center">
-      <h2 class="text-2xl font-bold text-white">{{ weather.location.name }}, {{ weather.location.country }}</h2>
-      <div class="flex justify-center items-center mt-4">
-        <img :src="weather.current.condition.icon" :alt="weather.current.condition.text" class="w-20 h-20" />
-      </div>
-      <p class="text-4xl font-bold text-white mt-2">{{ weather.current.temp_c }}°C</p>
-      <p class="text-white text-lg">{{ weather.current.condition.text }}</p>
-      <div class="flex justify-between mt-4 text-white">
-        <p>💧 Humidity: <b>{{ weather.current.humidity }}%</b></p>
-        <p>💨 Wind: <b>{{ weather.current.wind_kph }} km/h</b></p>
+    <div v-if="weather" class="mt-6">
+      <div class="max-w-md mx-auto bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 shadow-lg border border-gray-700/50">
+        <h2 class="text-2xl font-bold text-white">{{ weather.location.name }}, {{ weather.location.country }}</h2>
+        
+        <div class="flex items-center justify-between mt-6">
+          <div class="flex items-center">
+            <img :src="weather.current.condition.icon" :alt="weather.current.condition.text" class="w-24 h-24" />
+            <p class="text-5xl font-bold text-white ml-2">{{ weather.current.temp_c }}°C</p>
+          </div>
+          <p class="text-white text-lg">{{ weather.current.condition.text }}</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mt-6 text-gray-200">
+          <div class="bg-gray-700/30 rounded-lg p-4 flex items-center">
+            <span class="text-2xl mr-3">💧</span>
+            <div>
+              <p class="text-sm text-gray-400">Humidity</p>
+              <p class="font-bold">{{ weather.current.humidity }}%</p>
+            </div>
+          </div>
+          <div class="bg-gray-700/30 rounded-lg p-4 flex items-center">
+            <span class="text-2xl mr-3">💨</span>
+            <div>
+              <p class="text-sm text-gray-400">Wind Speed</p>
+              <p class="font-bold">{{ weather.current.wind_kph }} km/h</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
